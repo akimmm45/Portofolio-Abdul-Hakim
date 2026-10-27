@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Abdul Hakim</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.4;
+            color: #333;
+            background: white;
+            font-size: 11pt;
+        }
+
+        .container {
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 0.5in;
+            background: white;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 15px;
+        }
+
+        .name {
+            font-size: 24pt;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .contact-info {
+            font-size: 10pt;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .contact-info a {
+            color: #2c3e50;
+            text-decoration: none;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 13pt;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #bdc3c7;
+            text-transform: uppercase;
+        }
+
+        .content {
+            margin-bottom: 14px;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 15px;
+        }
+
+        .item-title {
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 11.5pt;
+        }
+
+        .item-sub {
+            font-weight: bold;
+            color: #34495e;
+        }
+
+        .date {
+            color: #7f8c8d;
+            font-style: italic;
+            white-space: nowrap;
+            font-size: 10pt;
+        }
+
+        .meta {
+            color: #7f8c8d;
+            font-size: 10pt;
+            margin-top: 2px;
+        }
+
+        ul.points {
+            margin-top: 5px;
+            padding-left: 18px;
+        }
+
+        ul.points li {
+            margin-bottom: 3px;
+            color: #444;
+        }
+
+        .project-meta {
+            color: #7f8c8d;
+            font-size: 10pt;
+        }
+
+        .project-meta a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .skill-row {
+            margin-bottom: 6px;
+            color: #555;
+        }
+
+        .skill-row strong {
+            color: #2c3e50;
+        }
+
+        .summary {
+            text-align: justify;
+            color: #444;
+        }
+
+        /* Tombol layar (tidak ikut tercetak) */
+        .toolbar {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .toolbar a,
+        .toolbar button {
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 10pt;
+            font-family: inherit;
+            text-decoration: none;
+        }
+
+        .toolbar a.secondary {
+            background-color: #7f8c8d;
+        }
+
+        .toolbar a:hover,
+        .toolbar button:hover {
+            opacity: 0.9;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 0.3in 0.2in;
+                padding-top: 70px;
+            }
+            .row {
+                flex-direction: column;
+                gap: 0;
+            }
+            .toolbar {
+                top: 10px;
+                right: 10px;
+            }
+        }
+
+        @page {
+            size: A4;
+            margin: 10mm 12mm;
+        }
+
+        @media print {
+            body {
+                font-size: 10pt;
+                line-height: 1.3;
+            }
+            .container {
+                padding: 0;
+                max-width: none;
+            }
+            .header {
+                margin-bottom: 12px;
+                padding-bottom: 10px;
+            }
+            .name {
+                font-size: 20pt;
+                margin-bottom: 5px;
+            }
+            .contact-info {
+                font-size: 9pt;
+                line-height: 1.45;
+            }
+            .section {
+                margin-bottom: 11px;
+            }
+            .section-title {
+                font-size: 11pt;
+                margin-bottom: 6px;
+                padding-bottom: 3px;
+                page-break-after: avoid;
+            }
+            .content {
+                margin-bottom: 8px;
+                page-break-inside: avoid;
+            }
+            .item-title {
+                font-size: 10pt;
+            }
+            .date,
+            .meta,
+            .project-meta {
+                font-size: 9pt;
+            }
+            ul.points {
+                margin-top: 3px;
+                padding-left: 16px;
+            }
+            ul.points li {
+                margin-bottom: 1.5px;
+            }
+            .skill-row {
+                margin-bottom: 3px;
+            }
+            .toolbar {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Tombol aksi (disembunyikan saat dicetak) -->
+    <div class="toolbar">
+        <a href="index.html" class="secondary">&larr; Portofolio</a>
+        <button type="button" onclick="window.print()">Download PDF</button>
+    </div>
+
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="name">ABDUL HAKIM</div>
+            <div class="contact-info">
+                Jakarta Timur | 0882-1127-8015 | <a href="mailto:abdulhakim.nv@gmail.com">abdulhakim.nv@gmail.com</a><br>
+                Portofolio: <a href="https://akimmm45.github.io/Portofolio-Abdul-Hakim">akimmm45.github.io/Portofolio-Abdul-Hakim</a> |
+                GitHub: <a href="https://github.com/akimmm45">github.com/akimmm45</a>
+            </div>
+        </div>
+
+        <!-- Profil Singkat -->
+        <div class="section">
+            <div class="section-title">Profil Singkat</div>
+            <div class="content summary">
+                Lulusan S1 Teknik Informatika Universitas Indraprasta PGRI dengan pengalaman membangun aplikasi berbasis Java dan web (PHP/MySQL), mencakup autentikasi multi-peran dan manajemen data. Terbiasa dengan analisis dan perancangan sistem (UML), basis data, dan dokumentasi teknis, serta berpengalaman di administrasi dan pengarsipan melalui dua praktik kerja lapangan. Terbuka pada posisi di bidang teknologi informasi di instansi pemerintah, BUMN, maupun swasta, khususnya analisis sistem, administrasi TI, dan pengelolaan data.
+            </div>
+        </div>
+
+        <!-- Pendidikan -->
+        <div class="section">
+            <div class="section-title">Pendidikan</div>
+            <div class="content">
+                <div class="row">
+                    <div class="item-title">Universitas Indraprasta PGRI (Unindra), Jakarta</div>
+                    <div class="date">2022 – 2026</div>
+                </div>
+                <div class="item-sub">S1 Teknik Informatika (S.Kom.) | IPK 3,38 / 4,00</div>
+                <ul class="points">
+                    <li>Skripsi: “Implementasi Metode Certainty Factor untuk Diagnosis Dini Hipertensi pada Lansia di Posyandu Lansia Melati”</li>
+                    <li>Fokus studi: rekayasa perangkat lunak, basis data, serta analisis dan perancangan sistem informasi</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Pengalaman Kerja -->
+        <div class="section">
+            <div class="section-title">Pengalaman Kerja</div>
+
+            <div class="content">
+                <div class="row">
+                    <div class="item-title">Analis &amp; Pengembang Sistem (Kuliah Kerja Praktik)</div>
+                    <div class="date">Oktober 2025 – Desember 2025</div>
+                </div>
+                <div class="item-sub">Aulia Wedding Event Organizer – Depok</div>
+                <ul class="points">
+                    <li>Mengembangkan sistem informasi reservasi Wedding Organizer berbasis Java (NetBeans) secara berkelompok.</li>
+                    <li>Merancang basis data MySQL (admin, pelanggan, paket event, venue, pemesanan, dan pembayaran) dengan relasi primary key dan foreign key agar data terintegrasi.</li>
+                    <li>Mengembangkan fitur CRUD dan pencarian Paket Event pada aplikasi.</li>
+                    <li>Menganalisis alur proses pencatatan pelanggan, pemesanan, dan pembayaran bersama tim.</li>
+                </ul>
+            </div>
+
+            <div class="content">
+                <div class="row">
+                    <div class="item-title">Petugas KPPS</div>
+                    <div class="date">Januari 2024 – Februari 2024</div>
+                </div>
+                <div class="item-sub">Balekambang RT.07/RW.02 – Jakarta Timur</div>
+                <ul class="points">
+                    <li>Mencatat hasil perhitungan suara di TPS.</li>
+                    <li>Bekerja sama dengan sesama anggota KPPS dalam pelaksanaan pemungutan dan penghitungan suara.</li>
+                    <li>Mengelola logistik kotak suara dari pengambilan hingga pengembalian ke KPU.</li>
+                </ul>
+            </div>
+
+            <div class="content">
+                <div class="row">
+                    <div class="item-title">Staf Administrasi &amp; Pelayanan Publik (Praktik Kerja Lapangan)</div>
+                    <div class="date">Maret 2020</div>
+                </div>
+                <div class="item-sub">Kelurahan Kampung Tengah – Jakarta Timur</div>
+                <ul class="points">
+                    <li>Menyusun dan mengetik surat pengantar, surat permohonan, serta dokumen administrasi kependudukan untuk kebutuhan warga.</li>
+                    <li>Mengarsipkan surat masuk dan surat keluar (surat keterangan domisili, surat pindah, dan surat pengantar) secara rapi.</li>
+                    <li>Mencatat kunjungan warga, mendokumentasikan layanan, dan menggandakan dokumen sesuai kebutuhan layanan.</li>
+                </ul>
+            </div>
+
+            <div class="content">
+                <div class="row">
+                    <div class="item-title">Staf Administrasi &amp; Konten (Praktik Kerja Lapangan)</div>
+                    <div class="date">Januari 2020 – Februari 2020</div>
+                </div>
+                <div class="item-sub">PT. Qyusi Global Indonesia – Jakarta Timur</div>
+                <ul class="points">
+                    <li>Melakukan input dan pengolahan data menggunakan Microsoft Office.</li>
+                    <li>Menangani surat-menyurat dan dokumen administrasi perusahaan.</li>
+                    <li>Mengedit video untuk keperluan publikasi dan promosi.</li>
+                    <li>Mengunggah dan mengelola konten video di kanal YouTube perusahaan.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Proyek Akademik -->
+        <div class="section">
+            <div class="section-title">Proyek Akademik</div>
+
+            <div class="content">
+                <div class="item-title">Implementasi Metode Certainty Factor untuk Diagnosis Dini Hipertensi pada Lansia di Posyandu Lansia Melati</div>
+                <div class="project-meta">Proyek Skripsi/Mandiri | 2026 | Java (NetBeans), MySQL, UML</div>
+                <div class="project-meta">Kode sumber: <a href="https://github.com/akimmm45/projek-tugas-akhir.git">https://github.com/akimmm45/projek-tugas-akhir.git</a></div>
+                <ul class="points">
+                    <li>Merancang dan mengembangkan aplikasi desktop berbasis Java (NetBeans) dan basis data MySQL dengan sistem login berbasis peran admin.</li>
+                    <li>Membangun modul manajemen data pasien (CRUD) dengan nomor rekam medis otomatis.</li>
+                    <li>Mengimplementasikan metode Certainty Factor berdasarkan penilaian pakar untuk menghitung tingkat kepastian diagnosis.</li>
+                    <li>Membuat fitur laporan dan cetak hasil diagnosis pasien.</li>
+                    <li>Menganalisis dan merancang sistem dengan UML (use case, activity, sequence, dan class diagram).</li>
+                    <li>Hasil pengujian, mis. tingkat kesesuaian diagnosis sistem dengan pakar sebesar 86.67% pada 15 data pengujian pasien.</li>
+                </ul>
+            </div>
+
+            <div class="content">
+                <div class="item-title">Aplikasi Manajement EO Aulia Wedding</div>
+                <div class="project-meta">Proyek Kuliah Kerja Praktik/Kelompok | 2025 | Java (NetBeans), MySQL, UML</div>
+                <div class="project-meta">Kode sumber: <a href="https://github.com/akimmm45/Aplikasi_ManajementEO_AuliaWedding.git">https://github.com/akimmm45/Aplikasi_ManajementEO_AuliaWedding.git</a></div>
+                <ul class="points">
+                    <li>Mengembangkan secara berkelompok aplikasi desktop manajemen Wedding Organizer berbasis Java (NetBeans) dan MySQL yang mencakup login admin, pengelolaan pelanggan, paket event, venue, pemesanan, dan pembayaran (DP dan lunas), serta laporan PDF dengan JasperReports.</li>
+                    <li>Mengembangkan fitur CRUD dan pencarian Paket Event pada aplikasi Java (NetBeans).</li>
+                    <li>Menghubungkan tabel melalui relasi (primary key dan foreign key) agar data pemesanan, pembayaran, dan laporan tersimpan terintegrasi.</li>
+                </ul>
+            </div>
+
+            <div class="content">
+                <div class="item-title">Website Jual Beli Furniture</div>
+                <div class="project-meta">Proyek Pemrograman Web Lanjut/Mandiri | 2024 | HTML, CSS, JavaScript, PHP, MySQL</div>
+                <div class="project-meta">Kode sumber: <a href="https://github.com/akimmm45/belajarphp_websitefurniture-.git">https://github.com/akimmm45/belajarphp_websitefurniture-.git</a></div>
+                <ul class="points">
+                    <li>Membangun website jual beli furniture secara mandiri menggunakan HTML, CSS, JavaScript, PHP, dan MySQL, dengan autentikasi dua peran (admin dan pelanggan).</li>
+                    <li>Mengembangkan alur belanja pelanggan: katalog produk, keranjang, checkout dengan alamat dan pilihan ekspedisi, riwayat pesanan, nota, serta konfirmasi pembayaran dengan unggah bukti transfer.</li>
+                    <li>Membangun panel admin untuk mengelola produk (tambah, ubah, hapus beserta foto dan stok) dan pesanan, memverifikasi bukti pembayaran, serta memperbarui status pesanan dan nomor resi.</li>
+                    <li>Merancang basis data MySQL dengan 10 tabel (produk, kategori, pelanggan, pembelian, pembayaran, dan lainnya) untuk mencatat transaksi secara terintegrasi.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Keahlian -->
+        <div class="section">
+            <div class="section-title">Keahlian</div>
+            <div class="content">
+                <div class="skill-row"><strong>Pemrograman:</strong> Java (NetBeans); pemrograman web dasar: PHP, JavaScript, HTML, CSS</div>
+                <div class="skill-row"><strong>Basis data:</strong> MySQL (basis data relasional)</div>
+                <div class="skill-row"><strong>Analisis &amp; perancangan sistem:</strong> UML (use case, activity, sequence, class diagram)</div>
+                <div class="skill-row"><strong>Perkantoran:</strong> Microsoft Word, Excel, PowerPoint</div>
+                <div class="skill-row"><strong>Desain &amp; multimedia:</strong> Canva, Figma, Miro (desain visual dasar), CapCut (editing video dasar)</div>
+            </div>
+        </div>
+
+        <!-- Kemampuan Bahasa -->
+        <div class="section">
+            <div class="section-title">Kemampuan Bahasa</div>
+            <div class="content">
+                <div class="skill-row"><strong>Bahasa Indonesia:</strong> aktif (penutur asli)</div>
+                <div class="skill-row"><strong>Bahasa Inggris:</strong> pasif</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Jika dibuka dari tombol "Download CV" (main.html?download=1),
+        // dialog cetak langsung muncul sehingga bisa disimpan sebagai PDF.
+        window.addEventListener('load', function () {
+            if (new URLSearchParams(window.location.search).get('download') === '1') {
+                setTimeout(function () { window.print(); }, 400);
+            }
+        });
+    </script>
+</body>
+</html>
